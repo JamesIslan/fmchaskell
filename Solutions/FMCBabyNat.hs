@@ -26,13 +26,6 @@ eight = S seven
 -- (two + ) five === two + five
 -- (+ two) five === five + two
 
--- addition
-(+) :: Nat -> Nat -> Nat
-n + O   = n
-n + S m = S (n + m)
-
-infixl 6 +  -- (+)-assL; precedence 6
-
 -- Output: O means False, S O means True
 isZero :: Nat -> Nat
 isZero O = S O
@@ -53,6 +46,14 @@ odd :: Nat -> Nat
 odd O = O
 odd (S O) = S O
 odd (S (S n)) = odd n
+
+
+-- addition
+(+) :: Nat -> Nat -> Nat
+n + O   = n
+n + S m = S (n + m)
+
+infixl 6 +  -- (+)-assL; precedence 6
 
 -- This is called the dotminus or monus operator
 -- (also: proper subtraction, arithmetic subtraction, ...).
