@@ -47,12 +47,10 @@ odd O = O
 odd (S O) = S O
 odd (S (S n)) = odd n
 
-
 -- addition
 (+) :: Nat -> Nat -> Nat
 n + O   = n
-n + m = S (n + pred m)
--- n + S m = S (n + m)
+n + S m = S (n + m)
 
 infixl 6 +  -- (+)-assL; precedence 6
 
@@ -66,8 +64,7 @@ monus = (-*)
 (-*) :: Nat -> Nat -> Nat
 O -* _ = O
 n -* O = n
-n -* m = pred n -* pred m
--- (S n) -* (S m) = n -* m
+(S n) -* (S m) = n -* m
 
 infixl 6 -*
 
@@ -82,7 +79,6 @@ infixl 7 *  -- (*)-assL; precedence 7
 (^) :: Nat -> Nat -> Nat
 _ ^ O = S O
 n ^ (S m) = n ^ m * n
--- n ^ m = n ^ pred m * n
 
 infixr 8 ^  -- (^)-assL; precedence 8
 
