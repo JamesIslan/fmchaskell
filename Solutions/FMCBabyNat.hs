@@ -11,7 +11,7 @@ import Prelude ( Show(..) , Eq(..) , undefined )
 data Nat = O | S Nat
   deriving (Eq, Show)
 
--- some sugar
+-- Sugar
 zero, one, two, three, four, five, six, seven, eight :: Nat
 zero  = O
 one   = S zero
@@ -28,9 +28,7 @@ eight = S seven
 n + O   = n
 n + S m = S (n + m)
 
- -- syntactic associativity: L
- -- syntactic precedence: 6
-infixl 6 +
+infixl 6 +  -- (+)-assL; precedence 6
 
 -- Output: O means False, S O means True
 isZero :: Nat -> Nat
@@ -59,9 +57,10 @@ monus = undefined
 
 -- multiplication
 (*) :: Nat -> Nat -> Nat
-(*) = undefined
+_ * O = zero
+n * (S m) = (n * m) + n
 
-infixl 7 *
+infixl 7 *  -- (*)-assL; precedence 7
 
 -- exponentiation
 (^) :: Nat -> Nat -> Nat
