@@ -66,6 +66,8 @@ O -* _ = O
 n -* O = n
 (S n) -* (S m) = n -* m
 
+infixl 6 -*
+
 -- multiplication
 (*) :: Nat -> Nat -> Nat
 _ * O = zero
