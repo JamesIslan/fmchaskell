@@ -45,7 +45,9 @@ pred (S n) = n
 
 -- Output: O means False, S O means True
 even :: Nat -> Nat
-even = undefined
+even O = S O
+even (S O) = O
+even (S (S n)) = even n
 
 odd :: Nat -> Nat
 odd = undefined
