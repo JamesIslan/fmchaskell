@@ -51,7 +51,8 @@ odd (S (S n)) = odd n
 -- addition
 (+) :: Nat -> Nat -> Nat
 n + O   = n
-n + S m = S (n + m)
+n + m = S (n + pred m)
+-- n + S m = S (n + m)
 
 infixl 6 +  -- (+)-assL; precedence 6
 
