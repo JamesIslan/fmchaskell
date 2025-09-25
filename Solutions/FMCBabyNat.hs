@@ -81,7 +81,7 @@ _ ^ O = S O
 n ^ (S m) = n ^ m * n
 -- n ^ m = n ^ pred m * n
 
-infixl 8 ^  -- (^)-assL; precedence 8
+infixr 8 ^  -- (^)-assL; precedence 8
 
 -- quotient
 (/) :: Nat -> Nat -> Nat
