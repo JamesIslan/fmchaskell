@@ -66,7 +66,8 @@ monus = (-*)
 (-*) :: Nat -> Nat -> Nat
 O -* _ = O
 n -* O = n
-(S n) -* (S m) = n -* m
+n -* m = pred n -* pred m
+-- (S n) -* (S m) = n -* m
 
 infixl 6 -*
 
