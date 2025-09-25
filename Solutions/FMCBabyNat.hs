@@ -23,6 +23,9 @@ six   = S five
 seven = S six
 eight = S seven
 
+-- (two + ) five === two + five
+-- (+ two) five === five + two
+
 -- addition
 (+) :: Nat -> Nat -> Nat
 n + O   = n
