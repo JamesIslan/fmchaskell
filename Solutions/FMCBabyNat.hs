@@ -77,9 +77,11 @@ infixl 7 *  -- (*)-assL; precedence 7
 
 -- exponentiation
 (^) :: Nat -> Nat -> Nat
-(^) = undefined
+_ ^ O = S O
+n ^ (S m) = n ^ m * n
+-- n ^ m = n ^ pred m * n
 
--- decide: infix? ? ^
+infixl 8 ^  -- (^)-assL; precedence 8
 
 -- quotient
 (/) :: Nat -> Nat -> Nat
