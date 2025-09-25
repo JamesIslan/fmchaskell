@@ -35,7 +35,8 @@ infixl 6 +  -- (+)-assL; precedence 6
 
 -- Output: O means False, S O means True
 isZero :: Nat -> Nat
-isZero = undefined
+isZero O = S O
+isZero (S _) = O
 
 -- pred is the predecessor but we define zero's to be zero
 pred :: Nat -> Nat
