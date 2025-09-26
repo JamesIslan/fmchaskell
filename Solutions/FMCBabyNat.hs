@@ -116,9 +116,14 @@ infixl 7 %  -- Same as multiplication
 -- divides
 -- just for a change, we start by defining the "symbolic" operator
 -- and then define `devides` as a synonym to it
--- again, outputs: O means False, S O means True
 (|||) :: Nat -> Nat -> Nat
-(|||) = undefined
+O ||| n = isZero n
+n ||| m = isZero (m % n)
+
+divides :: Nat -> Nat -> Nat
+divides = (|||)
+
+infix 4 |||
 
 -- x `absDiff` y = |x - y|
 -- (Careful here: this - is the actual minus operator we know from the integers!)
