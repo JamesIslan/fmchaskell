@@ -101,6 +101,7 @@ n / m =
     S O -> zero -- Limited behaviour due to Naturals nature (lol :p)
     O -> one + (n -* m) / m
 
+infixl 7 / -- Same as multiplication
 
 -- remainder
 (%) :: Nat -> Nat -> Nat
@@ -109,6 +110,8 @@ n % m =
   case n < m of
     S O -> n
     O -> (n -* m) % m
+
+infixl 7 %  -- Same as multiplication
 
 -- divides
 -- just for a change, we start by defining the "symbolic" operator
