@@ -31,6 +31,11 @@ isZero :: Nat -> Nat
 isZero O = S O
 isZero (S _) = O
 
+-- signum of a number (-1, 0, or 1)
+sg :: Nat -> Nat
+sg O = zero
+sg _ = one
+
 -- pred is the predecessor but we define zero's to be zero
 pred :: Nat -> Nat
 pred O = O
@@ -144,11 +149,6 @@ infixl 6 |-|  -- Same as monus
 
 factorial :: Nat -> Nat
 factorial = (!)
-
--- signum of a number (-1, 0, or 1)
-sg :: Nat -> Nat
-sg O = zero
-sg _ = one
 
 -- lo b a is the floor of the logarithm base b of a
 lo :: Nat -> Nat -> Nat
