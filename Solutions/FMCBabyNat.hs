@@ -36,6 +36,16 @@ pred :: Nat -> Nat
 pred O = O
 pred (S n) = n
 
+-- less than
+(<) :: Nat -> Nat -> Nat
+O < (S _) = S O
+_ < O = O
+(S n) < (S m) = n < m
+
+lt :: Nat -> Nat -> Nat
+lt = (<)
+infix 4 <
+
 -- Output: O means False, S O means True
 even :: Nat -> Nat
 even O = S O
