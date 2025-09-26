@@ -135,6 +135,8 @@ n |-| m =
 absDiff :: Nat -> Nat -> Nat
 absDiff = (|-|)
 
+infixl 6 -*  -- Same as monus
+
 factorial :: Nat -> Nat
 factorial = undefined
 
