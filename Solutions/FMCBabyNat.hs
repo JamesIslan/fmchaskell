@@ -80,7 +80,7 @@ infixl 7 *  -- (*)-assL; precedence 7
 _ ^ O = S O
 n ^ (S m) = n ^ m * n
 
-infixr 8 ^  -- (^)-assL; precedence 8
+infixr 8 ^  -- (^)-assR; precedence 8
 
 -- quotient
 (/) :: Nat -> Nat -> Nat
