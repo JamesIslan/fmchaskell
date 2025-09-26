@@ -150,7 +150,16 @@ infixl 6 |-|  -- Same as monus
 factorial :: Nat -> Nat
 factorial = (!)
 
+-- logarithm
 -- lo b a is the floor of the logarithm base b of a
 lo :: Nat -> Nat -> Nat
-lo = undefined
+lo O _ = undefined  -- logarithm with base 0 is undefined on naturals world
+lo _ O = undefined  -- same
+lo (S O) _ = undefined  -- same
+lo n m =
+  case m < n of  -- logarithm base greater than argument
+    S O -> zero  -- 'cause we don't have access to decimal numbers
+    O -> one + lo n (m / n)  -- will be one when m == n
+
+
 
