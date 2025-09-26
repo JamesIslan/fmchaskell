@@ -135,10 +135,15 @@ n |-| m =
 absDiff :: Nat -> Nat -> Nat
 absDiff = (|-|)
 
-infixl 6 -*  -- Same as monus
+infixl 6 |-|  -- Same as monus
+
+-- factorial
+(!) :: Nat -> Nat
+(!) O = one
+(!) (S n) = S n * (!) n
 
 factorial :: Nat -> Nat
-factorial = undefined
+factorial = (!)
 
 -- signum of a number (-1, 0, or 1)
 sg :: Nat -> Nat
