@@ -94,7 +94,13 @@ infixr 8 ^  -- (^)-assR; precedence 8
 
 -- quotient
 (/) :: Nat -> Nat -> Nat
-(/) = undefined
+_ / O = undefined
+O / _ = zero
+n / m =
+  case n < m of
+    S O -> zero -- Limited behaviour due to Naturals nature (lol :p)
+    O -> one + (n -* m) / m
+
 
 -- remainder
 (%) :: Nat -> Nat -> Nat
