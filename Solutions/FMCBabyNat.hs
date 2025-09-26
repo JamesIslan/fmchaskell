@@ -126,12 +126,14 @@ divides = (|||)
 infix 4 |||
 
 -- x `absDiff` y = |x - y|
--- (Careful here: this - is the actual minus operator we know from the integers!)
-absDiff :: Nat -> Nat -> Nat
-absDiff = undefined
-
 (|-|) :: Nat -> Nat -> Nat
-(|-|) = absDiff
+n |-| m =
+  case n < m of
+    S O -> m -* n
+    O -> n -* m
+
+absDiff :: Nat -> Nat -> Nat
+absDiff = (|-|)
 
 factorial :: Nat -> Nat
 factorial = undefined
