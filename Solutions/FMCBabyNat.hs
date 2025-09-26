@@ -104,7 +104,11 @@ n / m =
 
 -- remainder
 (%) :: Nat -> Nat -> Nat
-(%) = undefined
+_ % O = undefined
+n % m =
+  case n < m of
+    S O -> n
+    O -> (n -* m) % m
 
 -- divides
 -- just for a change, we start by defining the "symbolic" operator
