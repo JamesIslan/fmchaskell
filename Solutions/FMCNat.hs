@@ -87,7 +87,7 @@ even (S O) = False
 even (S (S n)) = even n
 
 odd :: Nat -> Bool
-odd = undefined
+odd n = not(even n)
 
 
 ----------------------------------------------------------------
