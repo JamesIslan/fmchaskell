@@ -31,10 +31,10 @@ data Nat where
 ----------------------------------------------------------------
 
 instance Show Nat where
-
     -- zero  should be shown as O
     -- three should be shown as SSSO
-    show = undefined
+    show O = "O"
+    show (S n) = "S" ++ show n
 
 instance Eq Nat where
 
