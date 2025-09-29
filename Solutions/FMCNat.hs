@@ -37,8 +37,9 @@ instance Show Nat where
     show (S n) = "S" ++ show n
 
 instance Eq Nat where
-
-    (==) = undefined
+    O == O = True
+    S n == S m = n == m
+    _ == _ = False
 
 instance Ord Nat where
 
