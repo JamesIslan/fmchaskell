@@ -83,7 +83,8 @@ ifThenElse = undefined
 
 -- logical "implies"
 (==>) :: Bool -> Bool -> Bool
-(==>) = undefined
+True ==> False = False
+_ ==> _ = True
 
 infixr 1 ==>
 
