@@ -99,6 +99,8 @@ odd n = not(even n)
 n <+> O   = n
 n <+> S m = S (n <+> m)
 
+infixl 6 <+>  -- (<+>)-assL; precedence 6
+
 -- This is called the dotminus or monus operator
 -- (also: proper subtraction, arithmetic subtraction, ...).
 -- It behaves like subtraction, except that it returns 0
