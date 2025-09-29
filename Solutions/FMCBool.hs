@@ -90,7 +90,8 @@ infixr 1 ==>
 
 -- logical "implied by"
 (<==) :: Bool -> Bool -> Bool
-(<==) = undefined
+False <== True = False
+_ <== _ = True
 
 infixl 1 <==
 
