@@ -116,11 +116,14 @@ n <-> O = n
 infixl 6 <->  -- (<->)-assL; precedence 6
 
 -- multiplication
-times :: Nat -> Nat -> Nat
-times = undefined
-
 (<*>) :: Nat -> Nat -> Nat
-(<*>) = times
+_ <*> O = zero
+n <*> (S m) = (n <*> m) <+> n
+
+times :: Nat -> Nat -> Nat
+times = (<*>)
+
+infixl 7 <*>  -- (<*>)-assL; precedence 7
 
 -- power / exponentiation
 pow :: Nat -> Nat -> Nat
