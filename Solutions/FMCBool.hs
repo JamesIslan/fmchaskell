@@ -59,7 +59,8 @@ infixr 2 /|\
 
 -- NOR (aka: Peirce arrow or Quine dagger)
 (\|/) :: Bool -> Bool -> Bool
-(\|/) = undefined
+False \|/ False = True
+_ \|/ _ = False
 
 infixr 2 \|/
 
