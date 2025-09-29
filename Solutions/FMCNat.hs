@@ -169,9 +169,12 @@ n <%> m = snd(eucdiv (n, m))
 
 -- divides
 (<|>) :: Nat -> Nat -> Bool
-(<|>) = undefined
+O <|> n = isZero n
+n <|> m = isZero (m <%> n)
 
 divides = (<|>)
+
+infix 4 <|>  -- precedence 4
 
 
 -- distance between nats
