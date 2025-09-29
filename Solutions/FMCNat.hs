@@ -189,8 +189,12 @@ dist = (|-|)
 
 infixl 6 |-| -- (|-|)-assL; precedence 6
 
+(!) :: Nat -> Nat
+(!) O = one
+(!) (S n) = S n <*> (!) n
+
 factorial :: Nat -> Nat
-factorial = undefined
+factorial = (!)
 
 -- signum of a number (-1, 0, or 1)
 sg :: Nat -> Nat
