@@ -126,14 +126,17 @@ times = (<*>)
 infixl 7 <*>  -- (<*>)-assL; precedence 7
 
 -- power / exponentiation
+(<^>) :: Nat -> Nat -> Nat
+_ <^> O = S O
+n <^> (S m) = n <^> m <*> n
+
 pow :: Nat -> Nat -> Nat
-pow = undefined
+pow = (<^>)
 
 exp :: Nat -> Nat -> Nat
-exp = undefined
+exp = (<^>)
 
-(<^>) :: Nat -> Nat -> Nat
-(<^>) = undefined
+infixr 8 <^>  -- (<^>)-assR; precedence 8
 
 -- quotient
 (</>) :: Nat -> Nat -> Nat
