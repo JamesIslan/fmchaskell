@@ -144,6 +144,19 @@ exp = (<^>)
 
 infixr 8 <^>  -- (<^>)-assR; precedence 8
 
+
+-- euclidean division
+eucdiv :: (Nat, Nat) -> (Nat, Nat)  -- returns quotient and remainder
+eucdiv (_, O) = undefined
+eucdiv (n, m) =
+    if n < m
+    then (O, n) -- remainder is the n itself
+    else (quo, rem)
+        where
+            (quo', rem') = eucdiv (n <-> m, m) -- we regress to a smaller division
+            quo = S quo' -- quo will be succ of smaller division's quo'
+            rem = rem'  -- rem will remain the same
+
 -- quotient
 (</>) :: Nat -> Nat -> Nat
 (</>) = undefined
@@ -151,10 +164,6 @@ infixr 8 <^>  -- (<^>)-assR; precedence 8
 -- remainder
 (<%>) :: Nat -> Nat -> Nat
 (<%>) = undefined
-
--- euclidean division
-eucdiv :: (Nat, Nat) -> (Nat, Nat)
-eucdiv = undefined
 
 -- divides
 (<|>) :: Nat -> Nat -> Bool
