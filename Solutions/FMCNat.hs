@@ -106,10 +106,14 @@ infixl 6 <+>  -- (<+>)-assL; precedence 6
 -- It behaves like subtraction, except that it returns 0
 -- when "normal" subtraction would return a negative number.
 monus :: Nat -> Nat -> Nat
-monus = undefined
+monus = (<->)
 
-(-*) :: Nat -> Nat -> Nat
-(-*) = undefined
+(<->) :: Nat -> Nat -> Nat
+O <-> _ = O
+n <-> O = n
+(S n) <-> (S m) = n <-> m
+
+infixl 6 <->  -- (<->)-assL; precedence 6
 
 -- multiplication
 times :: Nat -> Nat -> Nat
