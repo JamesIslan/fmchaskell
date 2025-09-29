@@ -16,6 +16,8 @@ import Prelude
     , undefined
     , error
     , otherwise
+    , fst
+    , snd
     )
 
 -- Define evenerything that is undefined,
@@ -159,11 +161,11 @@ eucdiv (n, m) =
 
 -- quotient
 (</>) :: Nat -> Nat -> Nat
-(</>) = undefined
+n </> m = fst(eucdiv (n, m))
 
 -- remainder
 (<%>) :: Nat -> Nat -> Nat
-(<%>) = undefined
+n <%> m = snd(eucdiv (n, m))
 
 -- divides
 (<|>) :: Nat -> Nat -> Bool
