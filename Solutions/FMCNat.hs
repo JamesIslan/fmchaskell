@@ -95,7 +95,7 @@ even (S O) = False
 even (S (S n)) = even n
 
 odd :: Nat -> Bool
-odd n = not(even n)
+odd n = not (even n)
 
 
 ----------------------------------------------------------------
@@ -161,11 +161,11 @@ eucdiv (n, m) =
 
 -- quotient
 (</>) :: Nat -> Nat -> Nat
-n </> m = fst(eucdiv (n, m))
+n </> m = fst (eucdiv (n, m))
 
 -- remainder
 (<%>) :: Nat -> Nat -> Nat
-n <%> m = snd(eucdiv (n, m))
+n <%> m = snd (eucdiv (n, m))
 
 -- divides
 (<|>) :: Nat -> Nat -> Bool
@@ -209,7 +209,7 @@ lo (S O) _ = undefined  -- same
 lo n m =
     if m < n
     then zero  -- 'cause we don't have access to decimal numbers
-    else S(lo n (m </> n))  -- will be one when m == n
+    else S (lo n (m </> n))  -- will be one when m == n
 
 
 ----------------------------------------------------------------
@@ -220,7 +220,10 @@ lo n m =
 -- Do NOT use the following functions in the definitions above!
 
 toNat :: Integral a => a -> Nat
-toNat = undefined
+toNat n
+  | n < 0 = undefined
+  | n == 0 = O
+  | otherwise = S (toNat (n - 1))
 
 fromNat :: Integral a => Nat -> a
 fromNat = undefined
