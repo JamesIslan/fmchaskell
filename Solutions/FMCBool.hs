@@ -31,7 +31,7 @@ instance Show Bool where
 instance Enum Bool where
     toEnum 0 = False
     toEnum 1 = True
-    toEnum _ = undefined
+    toEnum _ = error "Não é possível converter este valor!"
 
     fromEnum False = 0
     fromEnum True = 1
