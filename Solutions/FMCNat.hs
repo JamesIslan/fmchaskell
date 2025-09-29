@@ -82,7 +82,9 @@ pred O = O
 pred (S n) = n
 
 even :: Nat -> Bool
-even = undefined
+even O = True
+even (S O) = False
+even (S (S n)) = even n
 
 odd :: Nat -> Bool
 odd = undefined
