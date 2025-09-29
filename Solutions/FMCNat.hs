@@ -73,7 +73,8 @@ eight = S seven
 ----------------------------------------------------------------
 
 isZero :: Nat -> Bool
-isZero = undefined
+isZero O = True
+isZero (S _) = False
 
 -- pred is the predecessor but we define zero's to be zero
 pred :: Nat -> Nat
