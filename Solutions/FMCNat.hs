@@ -180,10 +180,14 @@ infix 4 <|>  -- precedence 4
 -- distance between nats
 -- x `dist` y = |x - y|
 -- (Careful here: this - is the real minus operator!)
-dist :: Nat -> Nat -> Nat
-dist = undefined
 
-(|-|) = dist
+(|-|) :: Nat -> Nat -> Nat
+n |-| m = if n < m then m <-> n else n <-> m
+
+dist :: Nat -> Nat -> Nat
+dist = (|-|)
+
+infixl 6 |-| -- (|-|)-assL; precedence 6
 
 factorial :: Nat -> Nat
 factorial = undefined
