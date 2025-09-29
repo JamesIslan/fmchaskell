@@ -149,7 +149,7 @@ infixr 8 <^>  -- (<^>)-assR; precedence 8
 
 -- euclidean division
 eucdiv :: (Nat, Nat) -> (Nat, Nat)  -- returns quotient and remainder
-eucdiv (_, O) = undefined
+eucdiv (_, O) = error "Não é possível dividir um número por O"
 eucdiv (n, m) =
     if n < m
     then (O, n) -- remainder is the n itself
@@ -203,9 +203,9 @@ sg _ = S O
 
 -- lo b a is the floor of the logarithm base b of a
 lo :: Nat -> Nat -> Nat
-lo O _ = undefined  -- logarithm with base 0 is undefined on naturals world
-lo _ O = undefined  -- same
-lo (S O) _ = undefined  -- same
+lo O _ = error "Comportamento indefinido para logaritmo de base \"O\""
+lo _ O = error "Comportamento indefinido para logaritmo de logaritmando \"O\" não existe"
+lo (S O) _ = error "Comportamento indefinido para logaritmo de base \"one\""
 lo n m =
     if m < n
     then zero  -- 'cause we don't have access to decimal numbers
@@ -221,7 +221,7 @@ lo n m =
 
 toNat :: Integral a => a -> Nat
 toNat n
-  | n < 0 = undefined
+  | n < 0 = error "O número digitado não pertence ao tipo Nat"
   | n == 0 = O
   | otherwise = S (toNat (n - 1))
 
@@ -240,7 +240,7 @@ instance Num Nat where
     abs n = n
     signum = sg
     fromInteger x
-      | x < 0     = undefined
+      | x < 0     = error "Comportamento indefinido para números menores que 0"
       | x == 0    = O
       | otherwise = S (fromInteger(x - 1))
 
