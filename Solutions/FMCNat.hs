@@ -203,7 +203,13 @@ sg _ = S O
 
 -- lo b a is the floor of the logarithm base b of a
 lo :: Nat -> Nat -> Nat
-lo = undefined
+lo O _ = undefined  -- logarithm with base 0 is undefined on naturals world
+lo _ O = undefined  -- same
+lo (S O) _ = undefined  -- same
+lo n m =
+    if m < n
+    then zero  -- 'cause we don't have access to decimal numbers
+    else S(lo n (m </> n))  -- will be one when m == n
 
 
 ----------------------------------------------------------------
