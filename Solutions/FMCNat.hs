@@ -86,7 +86,7 @@ isZero (S _) = False
 
 -- pred is the predecessor but we define zero's to be zero
 pred :: Nat -> Nat
-pred O = O
+pred O = error "Este valor não posssui antecessor"
 pred (S n) = n
 
 even :: Nat -> Bool
