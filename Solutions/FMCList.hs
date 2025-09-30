@@ -142,7 +142,7 @@ takeWhile f (x : xs) =
   if f x
   then x : takeWhile f xs
   else []
--- L.takeWhile
+
 -- dropWhile
 
 -- tails
