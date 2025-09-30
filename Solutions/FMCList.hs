@@ -118,6 +118,10 @@ minimum [x] = x
 minimum (x : xs) = min x (minimum xs)
 
 -- maximum :: Ord a => [a] -> a
+maximum :: Ord a => [a] -> a
+maximum [] = error "Não é possível retornar o valor máximo de uma lista vazia"
+maximum [x] = x
+maximum (x : xs) = max x (maximum xs)
 
 -- take
 -- drop
