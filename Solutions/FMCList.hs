@@ -157,6 +157,13 @@ tails [] = [[]]
 tails (x : xs) = (x : xs) : tails xs
 
 -- init
+init :: [a] -> [a]
+init [] = error "Não é possível utilizar o init em uma lista vazia"
+init (x : xs) =
+  if null xs
+  then []
+  else x : init xs
+
 -- inits
 
 -- subsequences
