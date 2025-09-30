@@ -66,7 +66,8 @@ tail [] = error "Não é possível retornar sublista pois a lista fornecida é v
 tail (_ : xs) = xs
 
 null :: [a] -> Bool
-null = undefined
+null [] = True
+null (_ : _) = False
 
 length :: Integral i => [a] -> i
 length = undefined
