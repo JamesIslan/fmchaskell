@@ -124,6 +124,11 @@ maximum [x] = x
 maximum (x : xs) = max x (maximum xs)
 
 -- take
+take :: Int -> [a] -> [a]
+take _ [] = []
+take 0 _ = []
+take n (x : xs) = x : take (n-1) xs
+
 -- drop
 
 -- takeWhile
