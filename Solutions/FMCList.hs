@@ -136,6 +136,13 @@ drop 0 xs = xs
 drop n (_ : xs) = drop (n-1) xs
 
 -- takeWhile
+takeWhile :: (a -> Bool) -> [a] -> [a]
+takeWhile f [] = []
+takeWhile f (x : xs) =
+  if f x
+  then x : takeWhile f xs
+  else []
+-- L.takeWhile
 -- dropWhile
 
 -- tails
