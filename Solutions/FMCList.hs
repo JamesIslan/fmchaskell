@@ -78,7 +78,8 @@ sum [] = 0
 sum (x : xs) = x + sum xs
 
 product :: Num a => [a] -> a
-product = undefined
+product [] = 1
+product (x : xs) = product xs * x
 
 reverse :: [a] -> [a]
 reverse = undefined
