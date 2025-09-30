@@ -58,7 +58,8 @@ write [u,v]     for our u `Cons` (v `Cons` Nil)
 -}
 
 head :: [a] -> a
-head = undefined
+head [] = error "Não é possível retornar primeiro elemento pois a lista fornecida é vazia."
+head (x : _) = x
 
 tail :: [a] -> [a]
 tail = undefined
