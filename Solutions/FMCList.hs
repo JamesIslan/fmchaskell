@@ -112,6 +112,11 @@ xs +++ (y:ys) = (xs +++ [y]) +++ ys
 infixl 5 +++
 
 -- minimum :: Ord a => [a] -> a
+minimum :: Ord a => [a] -> a
+minimum [] = error "Não é possível retornar o valor mínimo de uma lista vazia"
+minimum [x] = x
+minimum (x : xs) = min x (minimum xs)
+
 -- maximum :: Ord a => [a] -> a
 
 -- take
