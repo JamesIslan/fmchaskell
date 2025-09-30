@@ -74,7 +74,8 @@ length [] = 0
 length (_ : xs) = 1 + length xs
 
 sum :: Num a => [a] -> a
-sum = undefined
+sum [] = 0
+sum (x : xs) = x + sum xs
 
 product :: Num a => [a] -> a
 product = undefined
