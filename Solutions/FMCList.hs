@@ -144,6 +144,12 @@ takeWhile f (x : xs) =
   else []
 
 -- dropWhile
+dropWhile :: (a -> Bool) -> [a] -> [a]
+dropWhile f [] = []
+dropWhile f (x : xs) =
+  if f x
+  then dropWhile f xs
+  else x : xs
 
 -- tails
 -- init
