@@ -70,7 +70,8 @@ null [] = True
 null (_ : _) = False
 
 length :: Integral i => [a] -> i
-length = undefined
+length [] = 0
+length (_ : xs) = 1 + length xs
 
 sum :: Num a => [a] -> a
 sum = undefined
