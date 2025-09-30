@@ -81,12 +81,14 @@ product :: Num a => [a] -> a
 product [] = 1
 product (x : xs) = product xs * x
 
-reverse :: [a] -> [a]
-reverse = undefined
-
 (++) :: [a] -> [a] -> [a]
 [] ++ ys = ys
 (x : xs) ++ ys = x : (xs ++ ys)
+
+reverse :: [a] -> [a]
+reverse [] = []
+reverse (x : xs) = reverse xs ++ [x]
+
 
 -- right-associative for performance!
 -- (what?!)
