@@ -85,7 +85,8 @@ reverse :: [a] -> [a]
 reverse = undefined
 
 (++) :: [a] -> [a] -> [a]
-(++) = undefined
+[] ++ ys = ys
+(x : xs) ++ ys = x : (xs ++ ys)
 
 -- right-associative for performance!
 -- (what?!)
