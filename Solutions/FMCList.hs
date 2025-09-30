@@ -62,7 +62,8 @@ head [] = error "Não é possível retornar primeiro elemento pois a lista forne
 head (x : _) = x
 
 tail :: [a] -> [a]
-tail = undefined
+tail [] = error "Não é possível retornar sublista pois a lista fornecida é vazia."
+tail (_ : xs) = xs
 
 null :: [a] -> Bool
 null = undefined
