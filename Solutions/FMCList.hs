@@ -192,6 +192,10 @@ and (x : xs) =
   x && and xs
 
 -- or
+or :: [Bool] -> Bool
+or [] = False
+or (x : xs) =
+  x || or xs
 
 -- concat
 
