@@ -175,7 +175,7 @@ inits xs = xs : inits (init xs)
 
 -- any
 any :: (a -> Bool) -> [a] -> Bool
-any f [] = False
+any _ [] = False
 any f (x : xs) =
   f x || any f xs
 
