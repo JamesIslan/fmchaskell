@@ -203,6 +203,8 @@ concat [] = []
 concat (x : xs) = x ++ concat xs
 
 -- elem using the funciton 'any' above
+elem :: Eq a => a -> [a] -> Bool -- For any type that can use == for comparison
+elem x = any (== x)
 
 -- elem': same as elem but elementary definition
 -- (without using other functions except (==))
