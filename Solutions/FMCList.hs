@@ -1,6 +1,7 @@
 {-# LANGUAGE GADTs #-}
 {-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
 {-# HLINT ignore "Use foldr" #-}
+{-# HLINT ignore "Use map" #-}
 
 module FMCList where
 
@@ -227,8 +228,10 @@ filter f (x : xs) =
   then x : filter f xs
   else filter f xs
 
---L.filter
 -- map
+map :: (a -> b) -> [a] -> [b]
+map _ [] = []
+map f (x : xs) = f x : map f xs
 
 -- cycle
 -- repeat
