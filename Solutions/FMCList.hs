@@ -180,6 +180,10 @@ any f (x : xs) =
   f x || any f xs
 
 -- all
+all :: (a -> Bool) -> [a] -> Bool
+all _ [] = True
+all f (x : xs) =
+  f x && all f xs
 
 -- and
 -- or
