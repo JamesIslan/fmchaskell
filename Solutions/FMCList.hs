@@ -234,7 +234,11 @@ map _ [] = []
 map f (x : xs) = f x : map f xs
 
 -- cycle
+
 -- repeat
+repeat :: a -> [a]
+repeat x = x : repeat x
+
 -- replicate
 
 -- isPrefixOf
