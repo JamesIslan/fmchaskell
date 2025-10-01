@@ -243,6 +243,10 @@ repeat :: a -> [a]
 repeat x = x : repeat x
 
 -- replicate
+replicate :: Int -> a -> [a]
+replicate 0 _ = []
+replicate n x = x : replicate (n - 1) x
+-- Do i need to implement `replicate (-1) x`?
 
 -- isPrefixOf
 -- isInfixOf
