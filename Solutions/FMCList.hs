@@ -214,6 +214,10 @@ elem' x (y : ys) =
   x == y || elem' x ys
 
 -- (!!)
+(!!) :: [a] -> Int -> a
+[] !! _ = error "Não foi possível encontrar elemento na posição especificada"
+(x : _) !! 0 = x
+(_ : xs) !! n = xs !! (n - 1)
 
 -- filter
 -- map
