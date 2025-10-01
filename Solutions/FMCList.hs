@@ -234,6 +234,9 @@ map _ [] = []
 map f (x : xs) = f x : map f xs
 
 -- cycle
+cycle :: [a] -> [a]
+cycle [] = error "Não é possível realizar este processo com uma lista vazia"
+cycle xs = xs ++ cycle xs
 
 -- repeat
 repeat :: a -> [a]
