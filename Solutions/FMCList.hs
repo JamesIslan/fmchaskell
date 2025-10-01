@@ -198,6 +198,9 @@ or (x : xs) =
   x || or xs
 
 -- concat
+concat :: [[a]] -> [a]
+concat [] = []
+concat (x : xs) = x ++ concat xs
 
 -- elem using the funciton 'any' above
 
