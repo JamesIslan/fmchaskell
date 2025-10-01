@@ -1,4 +1,6 @@
 {-# LANGUAGE GADTs #-}
+{-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
+{-# HLINT ignore "Use foldr" #-}
 
 module FMCList where
 
@@ -172,6 +174,11 @@ inits xs = xs : inits (init xs)
 -- subsequences
 
 -- any
+any :: (a -> Bool) -> [a] -> Bool
+any f [] = False
+any f (x : xs) =
+  f x || any f xs
+
 -- all
 
 -- and
