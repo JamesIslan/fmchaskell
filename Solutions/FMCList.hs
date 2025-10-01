@@ -186,6 +186,11 @@ all f (x : xs) =
   f x && all f xs
 
 -- and
+and :: [Bool] -> Bool
+and [] = True
+and (x : xs) =
+  x && and xs
+
 -- or
 
 -- concat
