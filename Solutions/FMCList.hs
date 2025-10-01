@@ -254,9 +254,16 @@ isPrefixOf []  _ = True
 isPrefixOf _ [] = False
 isPrefixOf (x : xs) (y : ys) = (x == y) && isPrefixOf xs ys
 
---L.isPrefix
 -- isInfixOf
+
 -- isSuffixOf
+isSuffixOf :: Eq a => [a] -> [a] -> Bool
+isSuffixOf [] _ = True
+isSuffixOf _ [] = False
+isSuffixOf xs (y : ys) =
+  length xs == length (y : ys) && isPrefixOf xs (y : ys)
+  || isSuffixOf xs ys
+
 
 -- zip
 -- zipWith
