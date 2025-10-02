@@ -22,19 +22,21 @@ uncurry f (a, b) = f a b
 
 -- flip takes a (currified) binary function
 -- and returns one that behaves the same but takes its arguments in the opposite order
+flip :: (a -> (b -> c)) -> (b -> (a -> c))
+flip f a b = f b a
 
 -- (.) takes two composable functions and returns their composition
 
 -- (.>) is composition but in diagramatic notation (should be ; but Haskell forbids)
-(.>) = flip (.)
+-- (.>) = flip (.)
 
 -- ($) takes a function and a suitable argument and applies the function to the argument
 -- think: why would we ever want that?
 
 -- iterate: figure it out by its type
-iterate :: (a -> a) -> a -> [a]
+-- iterate :: (a -> a) -> a -> [a]
 iterate = undefined
 
 -- orbit
-orbit = flip iterate
+-- orbit = flip iterate
 
