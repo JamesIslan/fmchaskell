@@ -310,12 +310,20 @@ break :: (a -> Bool) -> [a] -> ([a], [a])
 break _ [] = ([], [])
 break f (x : xs) =
   if f x
-  then([], x : xs)
+  then ([], x : xs)
   else
     let (ys, zs) = break f xs
     in (x : ys, zs)
 
 -- lines
+lines :: String -> [String]
+lines "" = []
+lines st =
+  let (leftStr, rightStr) = break (== '\n') st
+  in if rightStr == ""
+  then [leftStr]
+  else leftStr : lines (tail rightStr)
+
 -- words
 -- unlines
 unlines :: [String] -> String
