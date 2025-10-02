@@ -347,9 +347,12 @@ unwords = intercalate " " -- Leverages the intermediary function gen. by interca
 
 -- transpose
 
+-- palindrome
 -- checks if the letters of a phrase form a palindrome (see below for examples)
 palindrome :: String -> Bool
-palindrome = undefined
+palindrome st =
+  let normalStr = filter C.isAlphaNum (map C.toLower st)
+  in normalStr == reverse normalStr
 
 {-
 
