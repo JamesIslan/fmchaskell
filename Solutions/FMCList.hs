@@ -296,8 +296,14 @@ nub (x : xs) =
   else x : nub xs
 
 -- splitAt
--- what is the problem with the following?:
--- splitAt n xs  =  (take n xs, drop n xs)
+splitAt :: (Integral i) => i -> [a] -> ([a], [a])
+splitAt _ [] = ([], [])
+splitAt i (x : xs) =
+  if i <= 0
+  then ([], x : xs)
+  else
+    let (untilAt, afterAt) = splitAt (i - 1) xs
+    in (x : untilAt, afterAt)
 
 -- break
 
