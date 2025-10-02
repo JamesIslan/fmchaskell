@@ -35,6 +35,8 @@ flip f a b = f b a
 
 -- ($) takes a function and a suitable argument and applies the function to the argument
 -- think: why would we ever want that?
+($) :: (a -> b) -> a -> b
+f $ x = f x
 
 -- iterate: figure it out by its type
 -- iterate :: (a -> a) -> a -> [a]
