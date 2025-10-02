@@ -325,6 +325,17 @@ lines st =
   else leftStr : lines (tail rightStr)
 
 -- words
+words :: String -> [String]
+words "" = []
+words wrd =
+  let (leftWrd, rightWrd) = break (== ' ') wrd
+  in if rightWrd == ""
+  then [leftWrd]
+  else
+    if leftWrd == ""
+    then words (tail rightWrd)
+    else leftWrd : words (tail rightWrd)
+
 -- unlines
 unlines :: [String] -> String
 unlines [] = ""
