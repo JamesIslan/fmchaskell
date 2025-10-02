@@ -255,6 +255,10 @@ isPrefixOf _ [] = False
 isPrefixOf (x : xs) (y : ys) = (x == y) && isPrefixOf xs ys
 
 -- isInfixOf
+isInfixOf :: Eq a => [a] -> [a] -> Bool
+isInfixOf [] _ = True
+isInfixOf _ [] = False
+isInfixOf xs (y : ys) = isPrefixOf xs (y : ys) || isInfixOf xs ys
 
 -- isSuffixOf
 isSuffixOf :: Eq a => [a] -> [a] -> Bool
