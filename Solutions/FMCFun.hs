@@ -30,7 +30,8 @@ flip f a b = f b a
 (.) g f x = g (f x)
 
 -- (.>) is composition but in diagramatic notation (should be ; but Haskell forbids)
--- (.>) = flip (.)
+(.>) :: (a -> b) -> (b -> c) -> (a -> c)
+(.>) = flip (.)
 
 -- ($) takes a function and a suitable argument and applies the function to the argument
 -- think: why would we ever want that?
