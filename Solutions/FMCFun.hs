@@ -39,8 +39,8 @@ flip f a b = f b a
 f $ x = f x
 
 -- iterate: figure it out by its type
--- iterate :: (a -> a) -> a -> [a]
-iterate = undefined
+iterate :: (a -> a) -> a -> [a]
+iterate f x = x : iterate f (f x)
 
 -- orbit
 -- orbit = flip iterate
