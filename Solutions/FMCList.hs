@@ -268,8 +268,12 @@ isSuffixOf xs (y : ys) =
   length xs == length (y : ys) && isPrefixOf xs (y : ys)
   || isSuffixOf xs ys
 
-
 -- zip
+zip :: [a] -> [b] -> [(a, b)]
+zip [] _ = []
+zip _ [] = []
+zip (x : xs) (y : ys) = (x,y) : zip xs ys
+
 -- zipWith
 
 -- intercalate
