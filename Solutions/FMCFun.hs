@@ -43,5 +43,6 @@ iterate :: (a -> a) -> a -> [a]
 iterate f x = x : iterate f (f x)
 
 -- orbit
--- orbit = flip iterate
+orbit :: a -> (a -> a) -> [a]
+orbit = flip iterate
 
