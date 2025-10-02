@@ -306,6 +306,14 @@ splitAt i (x : xs) =
     in (x : untilAt, afterAt)
 
 -- break
+break :: (a -> Bool) -> [a] -> ([a], [a])
+break _ [] = ([], [])
+break f (x : xs) =
+  if f x
+  then([], x : xs)
+  else
+    let (ys, zs) = break f xs
+    in (x : ys, zs)
 
 -- lines
 -- words
