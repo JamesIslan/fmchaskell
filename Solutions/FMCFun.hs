@@ -26,6 +26,8 @@ flip :: (a -> (b -> c)) -> (b -> (a -> c))
 flip f a b = f b a
 
 -- (.) takes two composable functions and returns their composition
+(.) :: (b -> c) -> (a -> b) -> (a -> c)
+(.) g f x = g (f x)
 
 -- (.>) is composition but in diagramatic notation (should be ; but Haskell forbids)
 -- (.>) = flip (.)
