@@ -2,6 +2,7 @@
 {-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
 {-# HLINT ignore "Use foldr" #-}
 {-# HLINT ignore "Use map" #-}
+{-# HLINT ignore "Use unwords" #-}
 
 module FMCList where
 
@@ -308,6 +309,8 @@ unlines [] = ""
 unlines (x : xs) = x ++ "\n" ++ unlines xs
 
 -- unwords
+unwords :: [String] -> String
+unwords = intercalate " " -- Leverages the intermediary function gen. by intercalate func.
 
 -- transpose
 
