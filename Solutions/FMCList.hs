@@ -287,6 +287,12 @@ intercalate _ [] = []
 intercalate xs (y : ys) = y ++ xs ++ intercalate xs ys
 
 -- nub
+nub :: Eq a => [a] -> [a]
+nub [] = []
+nub (x : xs) =
+  if elem' x xs
+  then nub xs
+  else x : nub xs
 
 -- splitAt
 -- what is the problem with the following?:
