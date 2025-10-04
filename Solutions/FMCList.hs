@@ -346,6 +346,13 @@ unwords :: [String] -> String
 unwords = intercalate " " -- Leverages the intermediary function gen. by intercalate func.
 
 -- transpose
+transpose :: [[a]] -> [[a]]
+transpose [] = []
+transpose rows =
+  case filter (not . null) rows of
+    [] -> []
+    xs -> map head xs : transpose (map tail xs)
+
 
 -- palindrome
 -- checks if the letters of a phrase form a palindrome (see below for examples)
