@@ -174,6 +174,12 @@ inits [] = [[]]
 inits xs = xs : inits (init xs)
 
 -- subsequences
+subsequences :: [a] -> [[a]]
+subsequences [] = [[]]
+subsequences (x : xs) =
+  let subsTail = subsequences xs
+  in subsTail ++ map (x :) subsTail
+
 
 -- any
 any :: (a -> Bool) -> [a] -> Bool
